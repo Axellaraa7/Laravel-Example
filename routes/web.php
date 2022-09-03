@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::controller(Ex1Controller::class)->group(function(){
-  Route::get('/', 'index');
-  Route::get('/create','create');
-  Route::get('/scientific/{name}','getByName');
-  Route::get('/update/{name}','update');
+  Route::get('/', 'index')->name('exIndex');
+  Route::get('/create','create')->name('exCreate');
+  Route::get('/example/{id}','getById')->name('exGetById');
+  Route::get('/update/{id}','update')->name('exUpdate');
 });
 
 
