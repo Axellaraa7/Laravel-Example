@@ -15,3 +15,7 @@ its necessary the commando db:seed or migrate --seed
 
 # 5: Creating a factory
 To creat a factory you need to use the command 'make:factory'
+
+#Change the langauge
+Its necessary to translate the messages in the lang folder or add a new language folder and add the content of the messages
+Also, u have to change the locale variable in the returned array of app.php file and change it to the required language.

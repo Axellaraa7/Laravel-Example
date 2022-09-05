@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RequestEx1;
 use App\Models\Ex1;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,14 @@ class Ex1Controller extends Controller
   
   public function create(){ return view('create'); }
 
-  public function store(Request $request){
+  public function store(RequestEx1 $request){
+      //Request validation
+      // $request->validate([
+      //   'name' => 'required',
+      //   'bio' => 'required',
+      //   'birthday' => 'required'
+      // ]);
+
       $ex = new Ex1();
       $ex->name = $request->name;
       $ex->bio = $request->bio;
@@ -29,7 +37,7 @@ class Ex1Controller extends Controller
     return view('update',compact('ex'));
   }
 
-  public function update(Request $request, $id){
+  public function update(RequestEx1 $request, $id){
     $ex = Ex1::find($id);
     $ex->name = $request->name;
     $ex->bio = $request->bio;

@@ -21,6 +21,10 @@
       --fourth: #3A668B;
       --white: #ded;
       --black: #232;
+      --red: #ba2345;
+      --red2: #ff000033;
+      --green: #23ba45;
+      --green2: #00ff0033;  
     }
     body{
       padding: 1rem;
@@ -136,14 +140,21 @@
     }
     .container960{ max-width: 960px; }
     .container1140{ max-width: 1140px; }
-    .formElement2{ 
+    .formGroup2>div{ 
       flex: 1 1 auto;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-flow: row wrap;
-      gap: 1rem;
       padding: .5rem 1rem;
+      border: 2px solid white;
+    }
+    .alert{
+      max-width: 720px;
+      flex: 1 1 auto;
+      padding: .25rem .5rem;
+      border-radius: 5px;
+    }
+    .alertDanger{
+      border: 2px solid var(--red);
+      color: var(--red);
+      background-color: var(--red2);
     }
     .inputText,.inputArea, .inputDate{ 
       width: 250px;
