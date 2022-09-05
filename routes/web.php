@@ -17,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::controller(Ex1Controller::class)->group(function(){
   Route::get('/', 'index')->name('exIndex');
   Route::get('/create','create')->name('exCreate');
+  Route::post('/ex','store')->name('exStore');
   Route::get('/example/{id}','getById')->name('exGetById');
-  Route::get('/update/{id}','update')->name('exUpdate');
+  Route::get('/update/{id}','edit')->name('exEdit');
+  Route::put('/ex/{id}','update')->name('exUpdate');
+  Route::delete('/ex/{id}','destroy')->name('exDelete');
 });
 
 

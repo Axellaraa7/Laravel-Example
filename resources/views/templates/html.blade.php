@@ -12,6 +12,7 @@
       padding: 0;
       margin: 0;
       box-sizing: border-box;
+      resize: none;
     }
     :root{
       --main: #040A0E;
@@ -35,13 +36,6 @@
     }
 
     /* -- WELCOME --*/
-
-    .cardContainer{
-      max-width: 1140px;
-      margin: 0 auto;
-      grid-template-columns: 1fr 1fr;
-      padding: 1rem;
-    }
     .card{
       height: 132px;
       border-radius: 5px;
@@ -57,17 +51,9 @@
       height: 100%;
       border-radius: inherit;
     }
-    .infoUser{
+    .infoUser,.bioUser{
       flex: 1 1 auto;
       width: calc(100% - 132px - .5rem);
-    }
-    .bioUser{ 
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex: 1 1 auto;
-      width: calc(100% - 132px - .5rem );
-      border: 2px solid white;
     }
     .bioUser>p{ width: 40ch; }
 
@@ -144,25 +130,25 @@
       grid-area:bio;
       border: 2px solid violet;
     } */
-
-    .dFlex{ display: flex; }
-    .flexColumnWrap{ flex-flow: column wrap; }
-    .flexColumn{ flex-flow: column nowrap; }
-    .flexRowWrap{ flex-flow: row wrap; }
-    .flexRow{ flex-flow: row nowrap; }
-    .dGrid{ display: grid; }
-    .jcCenter{ justify-content: center; }
-    .jcStart{ justify-content: start; }
-    .jcEvenly{ justify-content: space-evenly; }
-    .jcAround{ justify-content: space-around; }
-    .aiCenter{ align-items: center; }
-    .aiStart{ align-items: start;}
-    .gap0h{ gap: .5rem; }
-    .gap1{ gap: 1rem; }
-    .formContainer{
-      max-width: 960px;
+    .container960, .container1140{
+      margin: 1rem auto;
       padding: 1rem;
-      margin: 0 auto;
+    }
+    .container960{ max-width: 960px; }
+    .container1140{ max-width: 1140px; }
+    .formElement2{ 
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-flow: row wrap;
+      gap: 1rem;
+      padding: .5rem 1rem;
+    }
+    .inputText,.inputArea, .inputDate{ 
+      width: 250px;
+      flex: 1 1 250px;
+      padding: .25rem .5rem;
     }
     .btn{
       display: block;
@@ -179,12 +165,29 @@
       color: var(--white); 
       border: 1px solid var(--white);
     }
+    .dFlex{ display: flex; }
+    .flexColumnWrap{ flex-flow: column wrap; }
+    .flexColumn{ flex-flow: column nowrap; }
+    .flexRowWrap{ flex-flow: row wrap; }
+    .flexRow{ flex-flow: row nowrap; }
+    .dGrid{ display: grid; }
+    .gridCol2x1fr{ grid-template-columns: 1fr 1fr; }
+    .jcCenter{ justify-content: center; }
+    .jcStart{ justify-content: start; }
+    .jcEvenly{ justify-content: space-evenly; }
+    .jcAround{ justify-content: space-around; }
+    .aiCenter{ align-items: center; }
+    .aiStart{ align-items: start;}
+    .gap0h{ gap: .5rem; }
+    .gap1{ gap: 1rem; }
+    .gap1h{ gap: 1.5rem; }
+    .gap2{ gap: 2rem; }
   </style>
 </head>
 <body class="dFlex jcStart aiCenter flexColumn gap1">
     <nav class="dFlex gap1 aiCenter">
-      <a href={{route("exIndex")}} class="btn btnMain">Home</a> | 
-      <a href={{route("exCreate")}} class="btn btnMain">Create</a>
+      <a href="{{route("exIndex")}}" class="btn btnMain">Home</a> | 
+      <a href="{{route("exCreate")}}" class="btn btnMain">Create</a>
     </nav>
   </header>
   <main>

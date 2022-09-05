@@ -5,7 +5,7 @@
 @section('h1','Home page')
 
 @section('main')
-  <section class="dGrid gap1 cardContainer">
+  <section class="dGrid gap1 gridCol2x1fr container1140">
     @foreach ($ex as $user)
       <div class="dFlex flexColumnWrap gap0h card">
         <figure class="userImg">
@@ -15,11 +15,11 @@
           <p>
             {{$user->name}} | {{$user->birthday}}  
           </p>
-          <a href={{route('exUpdate',$user->id)}} class="btn btnSec">Actualizar</a>
+          <a href={{route('exEdit',$user->id)}} class="btn btnSec">Actualizar</a>
         </div>
-        <div class="bioUser">
+        <div class="dFlex jcCenter aiCenter gap1 bioUser">
           <p>
-            {{$user->bio}} - 
+            {{$user->bio}}
           </p>
           <a href={{route('exGetById',$user->id)}} class="btn btnSec">Ver más</a>
         </div>

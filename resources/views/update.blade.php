@@ -5,7 +5,9 @@
 @section('h1','Updating - '.$ex->name)
 
 @section('main')
-  <form action="" method="post" class="dFlex flexColumn gap1 formContainer">
+  <form action="{{route('exUpdate',$ex->id)}}" method="post" class="dFlex flexColumn gap1h container960">
+    @csrf
+    @method('put')
     @include('./templates/formCrud')
   </form>
 @endsection
