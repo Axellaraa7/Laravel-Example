@@ -21,88 +21,57 @@
       --white: #ded;
       --black: #232;
     }
-
     body{
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-flow: column nowrap;
-      gap: 1rem;
-
       padding: 1rem;
       color: var(--white);
       background-color: var(--main);
     }
-
-    .mainLink{
-      display: inline-block;
-      padding: 0 1rem;
-      color: inherit;
-      text-decoration: none;
-      transition: .15s all ease 0s;
-    }
-
-    .mainLink:hover{
-      transform: scale(1.25);
-    }
-
-    .secLink{
-      display: inline-block;
-      padding: .5rem 1rem;
-      color: inherit;
-      text-decoration: none;
-      border: 2px solid white;
-    }
-
     main{
       min-height: 80vh;
+      align-self: stretch;
     }
-
     h1{
       text-align: center;
     }
 
+    /* -- WELCOME --*/
+
     .cardContainer{
       max-width: 1140px;
-      display: grid;
+      margin: 0 auto;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
       padding: 1rem;
     }
-
     .card{
       height: 132px;
-      display: flex;
-      flex-flow: column wrap;
-      gap: .5rem;
       border-radius: 5px;
       box-shadow: 0px 0px 5px 1px var(--white);
-      font-size: 10px;
+      font-size: 12px;
     }
-
     .userImg{
       flex: 1 1 132px;
       border-radius: inherit;
     }
-
     .userImg>img{
       width: 100%;
       height: 100%;
       border-radius: inherit;
     }
-
     .infoUser{
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
       flex: 1 1 auto;
       width: calc(100% - 132px - .5rem);
     }
-
     .bioUser{ 
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       flex: 1 1 auto;
       width: calc(100% - 132px - .5rem );
+      border: 2px solid white;
     }
+    .bioUser>p{ width: 40ch; }
+
+    /* -- CREATE -- */
 
     @media screen and (max-width: 990px){
       .cardContainer{
@@ -147,7 +116,6 @@
       padding: 1rem;
       border: 2px solid white;
     }
-
     .card{
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -157,17 +125,14 @@
       border-radius: 5px;
       box-shadow: 0px 0px 5px 1px var(--white);
     }
-
     .userImg{
       grid-area:img; 
       border: 2px solid green;
     }
-
     .userImg>img{
       width: 100%;
       height: 100%;
     }
-
     .infoUser{
       display: flex;
       align-items: center;
@@ -175,22 +140,55 @@
       grid-area:info;
       border: 2px solid blue;
     }
-
     .bioUser{ 
       grid-area:bio;
       border: 2px solid violet;
-    } 
-    */
+    } */
+
+    .dFlex{ display: flex; }
+    .flexColumnWrap{ flex-flow: column wrap; }
+    .flexColumn{ flex-flow: column nowrap; }
+    .flexRowWrap{ flex-flow: row wrap; }
+    .flexRow{ flex-flow: row nowrap; }
+    .dGrid{ display: grid; }
+    .jcCenter{ justify-content: center; }
+    .jcStart{ justify-content: start; }
+    .jcEvenly{ justify-content: space-evenly; }
+    .jcAround{ justify-content: space-around; }
+    .aiCenter{ align-items: center; }
+    .aiStart{ align-items: start;}
+    .gap0h{ gap: .5rem; }
+    .gap1{ gap: 1rem; }
+    .formContainer{
+      max-width: 960px;
+      padding: 1rem;
+      margin: 0 auto;
+    }
+    .btn{
+      display: block;
+      padding: 5px 10px;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      border-radius: 5px;
+      transition: .15s all ease 0s;
+    }
+    .btn:hover{ transform: scale(1.25); }
+    .btnMain{ color: var(--white); }
+    .btnSec{ 
+      color: var(--white); 
+      border: 1px solid var(--white);
+    }
   </style>
 </head>
-<body>
-  <header>
-    <nav class="nav">
-      <a href={{route("exIndex")}} class="mainLink">Home</a> |
-      <a href={{route("exCreate")}} class="mainLink">Create</a>
+<body class="dFlex jcStart aiCenter flexColumn gap1">
+    <nav class="dFlex gap1 aiCenter">
+      <a href={{route("exIndex")}} class="btn btnMain">Home</a> | 
+      <a href={{route("exCreate")}} class="btn btnMain">Create</a>
     </nav>
   </header>
   <main>
+    <h1>@yield('h1')</h1>
     @yield('main')
   </main>
   <footer>

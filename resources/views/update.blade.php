@@ -1,8 +1,12 @@
 @extends('./templates/html')
 
-@section('title','Update - '.$name)
+@section('title','Update - '.$ex->name)
+
+@section('h1','Updating - '.$ex->name)
 
 @section('main')
-  <h1>Updating | {{$name}}</h1>
+  <form action="" method="post" class="dFlex flexColumn gap1 formContainer">
+    @include('./templates/formCrud')
+  </form>
 @endsection
 

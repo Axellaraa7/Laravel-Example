@@ -2,6 +2,10 @@
 
 @section('title','Create')
 
+@section('h1','Create Page')
+
 @section('main')
-  <h1>Create Page</h1>
+  <form action="" method="post" class="dFlex flexColumn gap1 formContainer">
+    @include('./templates/formCrud')
+  </form>
 @endsection

@@ -2,24 +2,26 @@
 
 @section('title','Home')
 
+@section('h1','Home page')
+
 @section('main')
-  <h1>Home Page</h1>
-  <section class="cardContainer">
+  <section class="dGrid gap1 cardContainer">
     @foreach ($ex as $user)
-      <div class="card">
+      <div class="dFlex flexColumnWrap gap0h card">
         <figure class="userImg">
           <img alt="userImg">
         </figure>
-        <div class="infoUser">
+        <div class="dFlex jcEvenly aiCenter infoUser">
           <p>
             {{$user->name}} | {{$user->birthday}}  
           </p>
-          <a href={{route('exUpdate',$user->id)}} class="secLink">Actualizar</a>
+          <a href={{route('exUpdate',$user->id)}} class="btn btnSec">Actualizar</a>
         </div>
         <div class="bioUser">
           <p>
-            {{$user->bio}} - <a href={{route('exGetById',$user->id)}} class="secLink">Ver más</a>
+            {{$user->bio}} - 
           </p>
+          <a href={{route('exGetById',$user->id)}} class="btn btnSec">Ver más</a>
         </div>
       </div>
     @endforeach

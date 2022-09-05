@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/create', [ScientificController::class,'create']);
 Route::controller(Ex1Controller::class)->group(function(){
   Route::get('/', 'index')->name('exIndex');
   Route::get('/create','create')->name('exCreate');
@@ -25,5 +26,5 @@ Route::controller(Ex1Controller::class)->group(function(){
 
 
 
-// Route::get('/create', [ScientificController::class,'create']);
+
 
