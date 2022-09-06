@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name',100);
             $table->text('bio');
             $table->date('birthday');
+            $table->string('slug',100);
             $table->timestamp('created')->useCurrent();
             $table->timestamps();
         });

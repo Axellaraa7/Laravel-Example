@@ -35,7 +35,7 @@ Route::resource('ex',Ex1Controller::class)->names([
     'store' => 'exStore',
     'edit' => 'exEdit',
     'update' => 'exUpdate',
-    'show' => 'exGetById',
+    'show' => 'exShow',
     'destroy' => 'exDelete'
   ]);
 

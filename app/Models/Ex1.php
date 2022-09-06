@@ -23,8 +23,13 @@ class Ex1 extends Model
       //   set: fn($name) => strtoupper($name)
       // );
       return Attribute::make(
-        get: fn($name) => ucwords($name),
+        get: fn($name) => ucwords(strtolower($name)),
         set: fn($name) => strtoupper($name)
       );
+    }
+
+    //Change the db field used to show in the url as parameter. By default is the id or the primary key, but if u change it u'll get the field choosen
+    public function getRouteKeyName(){
+      return 'slug';
     }
 }

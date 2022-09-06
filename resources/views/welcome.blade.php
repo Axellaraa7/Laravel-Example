@@ -21,7 +21,7 @@
           <p>
             {{$user->bio}}
           </p>
-          <a href={{route('exGetById',$user->id)}} class="btn btnSec">Ver más</a>
+          <a href={{route('exShow',$user)}} class="btn btnSec">Ver más</a>
         </div>
       </div>
     @endforeach
