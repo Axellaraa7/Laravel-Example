@@ -12,6 +12,11 @@ class Ex1 extends Model
 
     protected $table = 'ex1';
 
+    /* Allowed fields Mass Assignment */
+    //protected $fillable = ['name','bio','birthday'];
+    /* Forbidden fields Mass Assignment */
+    protected $guarded = [];
+    /* Mutators and Accesors */
     protected function name(): Attribute{
       // return new Attribute(
       //   get: fn($name) => ucwords($name),

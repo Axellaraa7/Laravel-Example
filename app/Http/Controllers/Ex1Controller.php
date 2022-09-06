@@ -17,17 +17,21 @@ class Ex1Controller extends Controller
 
   public function store(RequestEx1 $request){
       //Request validation
-      // $request->validate([
-      //   'name' => 'required',
-      //   'bio' => 'required',
-      //   'birthday' => 'required'
-      // ]);
+      /* $request->validate([
+        'name' => 'required',
+        'bio' => 'required',
+        'birthday' => 'required'
+      ]); */
 
-      $ex = new Ex1();
+      /* NO MASS ASSIGNMENT */ 
+      /* $ex = new Ex1();
       $ex->name = $request->name;
       $ex->bio = $request->bio;
       $ex->birthday = $request->birthday;
-      $ex->save();
+      $ex->save(); */
+
+      Ex1::create($request->all());
+
       return redirect()->route('exIndex');
 
   }
@@ -38,17 +42,18 @@ class Ex1Controller extends Controller
   }
 
   public function update(RequestEx1 $request, $id){
-    $ex = Ex1::find($id);
-    $ex->name = $request->name;
+    /* NO MASS ASSIGNAMENT */
+    /*$ex->name = $request->name;
     $ex->bio = $request->bio;
     $ex->birthday = $request->birthday;
-
-    $ex->save();
+    $ex->save(); */
+    $ex = Ex1::find($id);
+    $ex->update($request->all());
     return redirect()->route('exIndex');
     
   }
 
-  public function getById($id){
+  public function show($id){
     $ex = Ex1::find($id);
     return view('getById',['ex' => $ex]);
   }

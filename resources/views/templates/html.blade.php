@@ -143,7 +143,6 @@
     .formGroup2>div{ 
       flex: 1 1 auto;
       padding: .5rem 1rem;
-      border: 2px solid white;
     }
     .alert{
       max-width: 720px;
