@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Ex1Controller;
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 /* SIMPLE ROUTE */
-// Route::get('/create', [ScientificController::class,'create']);
+// Route::get('/create', [Ex1Controller::class,'create'])->name('exCreate);
 
 /* GROUPING ROUTES BY A CLASS AND CUSTOM NAMES */
 // Route::controller(Ex1Controller::class)->group(function(){
@@ -29,21 +31,20 @@ use Illuminate\Support\Facades\Route;
 
 /* GROUPING BY CLASS AND CONVETIONS */
 // To modify the url of the routes, is necessary to change the App service providers in the boot method
-Route::resource('ex',Ex1Controller::class)->names([
-    'index' => 'exIndex',
-    'create' => 'exCreate',
-    'store' => 'exStore',
-    'edit' => 'exEdit',
-    'update' => 'exUpdate',
-    'show' => 'exShow',
-    'destroy' => 'exDelete'
-  ]);
+Route::resource('ex', Ex1Controller::class)->names([
+  'index' => 'exIndex',
+  'create' => 'exCreate',
+  'store' => 'exStore',
+  'edit' => 'exEdit',
+  'update' => 'exUpdate',
+  'show' => 'exShow',
+  'destroy' => 'exDelete'
+]);
 
-
-
-
-
-
-
-
-
+Route::resource('mail',MailController::class)
+->names([
+  'create' => 'mailCreate',
+  'store' => 'mailStore'
+])
+->only(['create','store']);
+// ->missing(fn (Request $request) => redirect()->route('exIndex'));

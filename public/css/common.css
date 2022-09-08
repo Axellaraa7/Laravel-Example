@@ -1,0 +1,19 @@
+*{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  resize: none;
+}
+:root{
+  --main: #040A0E;
+  --sec: #4380B1;
+  --third: #295074;
+  --fourth: #3A668B;
+  --white: #ded;
+  --black: #232;
+  --red: #ba2345;
+  --red2: #ff000033;
+  --green: #23ba45;
+  --green2: #00ff0033;  
+}

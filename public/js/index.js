@@ -1,10 +1,19 @@
-const d = document;
+import { get } from './modules/ajax.js';
+
+const d = document,
+url = "https://randomuser.me/api/?results=";
 
 d.addEventListener("DOMContentLoaded",async ()=>{
-  const imgs = d.querySelectorAll(".userImg>img");
-  const json = await fetch("https://randomuser.me/api/?results="+imgs.length);
-  const { results }= await json.json();
-  imgs.forEach((img,index)=>{
-    img.src=results[index].picture.large;
-  })
+  switch(location.pathname){
+    case "/ex":
+      get(url,(results,elements) => {
+        elements.forEach((element,index)=>{
+          element.src=results[index].picture.large;
+        })
+      });
+    break;
+    default:
+      console.log(location.pathname);
+    break;
+  }
 }); 

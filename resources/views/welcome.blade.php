@@ -5,7 +5,7 @@
 @section('h1','Home page')
 
 @section('main')
-  <section class="dGrid gap1 gridCol2x1fr container1140">
+  <section class="container1140 dGrid gap1 gridCol2x1fr lg-gridCol1fr md-gridCol2x1fr sm-gridCol1fr ">
     @foreach ($ex as $user)
       <div class="dFlex flexColumnWrap gap0h card">
         <figure class="userImg">

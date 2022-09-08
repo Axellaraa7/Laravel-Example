@@ -1,0 +1,21 @@
+.dFlex{ display: flex; }
+.flexColumnWrap{ flex-flow: column wrap; }
+.flexColumn{ flex-flow: column nowrap; }
+.flexRowWrap{ flex-flow: row wrap; }
+.flexRow{ flex-flow: row nowrap; }
+.dGrid{ display: grid; }
+.gridCol2x1fr{ grid-template-columns: 1fr 1fr; }
+.jcCenter{ justify-content: center; }
+.jcStart{ justify-content: start; }
+.jcEvenly{ justify-content: space-evenly; }
+.jcAround{ justify-content: space-around; }
+.jcBetween{ justify-content: space-between; }
+.aiCenter{ align-items: center; }
+.aiStart{ align-items: start; }
+.aiStretch{ align-items: stretch; }
+.gap0h{ gap: .5rem; }
+.gap1{ gap: 1rem; }
+.gap1h{ gap: 1.5rem; }
+.gap2{ gap: 2rem; }
+.flexAuto{ flex: 1 1 auto; }
+.flex100{ flex: 1 1 100%; }
