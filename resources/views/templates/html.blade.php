@@ -2,7 +2,8 @@
   $links = [
     ['name' => 'Home' , 'route' => 'exIndex'],
     ['name' => 'Create' , 'route' => 'exCreate'],
-    ['name' => 'Contact us' , 'route' => 'mailCreate']
+    ['name' => 'Contact us' , 'route' => 'mailCreate'],
+    ['name' => 'Components' , 'route' => 'exComponents']
 ];
 @endphp
 

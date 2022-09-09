@@ -29,7 +29,7 @@ use Illuminate\Http\Request;
 //   Route::delete('/ex/{id}','destroy')->name('exDelete');
 // });
 
-/* GROUPING BY CLASS AND CONVETIONS */
+/* GROUPING BY CLASS AND CONVENTIONS */
 // To modify the url of the routes, is necessary to change the App service providers in the boot method
 Route::resource('ex', Ex1Controller::class)->names([
   'index' => 'exIndex',
@@ -40,10 +40,14 @@ Route::resource('ex', Ex1Controller::class)->names([
   'show' => 'exShow',
   'destroy' => 'exDelete'
 ]);
+
 Route::resource('contact',MailController::class)
 ->names([
   'create' => 'mailCreate',
   'store' => 'mailStore'
 ])
 ->only(['create','store']);
-// ->missing(fn (Request $request) => redirect()->route('exIndex'));
+
+Route::get('/components',function(){
+  return view('components');
+})->name('exComponents');
