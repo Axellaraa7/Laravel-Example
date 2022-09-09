@@ -1,4 +1,4 @@
-<section class="dFlex flexRowWrap formGroup gap1">
+<section class="dFlex flexRowWrap gap1 formGroup ">
   <div class="dFlex flexColumn gap0h flexAuto">
     <div class="dFlex flexColumn gap0h">
       <label for="name" class="label">Type your name</label>
@@ -29,12 +29,17 @@
     @enderror
   </div>
 </section>
-<section class="dFlex flexRowWrap jcBetween" style="border: 2px solid white;">
-  <div class="dFlex flexRow gap0h" style="border: 2px solid white;">
-    <input type="checkbox" name="terms" id="terms">
-    <label for="terms" class="label">Accept the terms and conditions</label>
+<section class="dFlex jcBetween flexRowWrap formGroup gap1" >
+  <div class="dFlex flexColumn gap0h ">
+    <div class="dFlex aiCenter flexRow gap0h" >
+      <input type="checkbox" name="terms" id="terms">
+      <label for="terms" class="label">Accept the terms and conditions</label>
+    </div>
+    @error('terms')
+      <div class="alert alertDanger">* {{$message}}</div>
+    @enderror
   </div>
-  <div style="border: 2px solid white;">
+  <div>
     <button class="btn btnSec">Enviar</button>
   </div>
 </section>

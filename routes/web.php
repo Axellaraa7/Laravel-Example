@@ -40,8 +40,7 @@ Route::resource('ex', Ex1Controller::class)->names([
   'show' => 'exShow',
   'destroy' => 'exDelete'
 ]);
-
-Route::resource('mail',MailController::class)
+Route::resource('contact',MailController::class)
 ->names([
   'create' => 'mailCreate',
   'store' => 'mailStore'

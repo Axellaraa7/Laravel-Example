@@ -18,7 +18,7 @@
     @enderror
   </div>
 </div>
-<div class="dFlex jcAround flexRowWrap formGroup">
+<div class="dFlex jcAround flexRowWrap gap1 formGroup">
   <div class="dFlex flexColumn gap0h flexAuto">
     <div class="dFlex aiCenter gap1">
       <label for="bio" class="label">Type the bio</label>

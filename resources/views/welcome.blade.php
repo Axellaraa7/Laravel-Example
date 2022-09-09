@@ -5,6 +5,13 @@
 @section('h1','Home page')
 
 @section('main')
+  @if(session('mail'))
+    @if(session('mail')[0])
+      <div class="alert alertSuccess">{{ session('mail')[1] }}</div>
+    @else
+      <div class="alert alertDanger">{{ session('mail')[1] }}</div>
+    @endif
+  @endif
   <section class="container1140 dGrid gap1 gridCol2x1fr lg-gridCol1fr md-gridCol2x1fr sm-gridCol1fr ">
     @foreach ($ex as $user)
       <div class="dFlex flexColumnWrap gap0h card">

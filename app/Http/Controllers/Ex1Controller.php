@@ -36,24 +36,18 @@ class Ex1Controller extends Controller
       return redirect()->route('exIndex');
   }
 
-//It's possible to receive an object of the model even if u just send the id, laravel will interprete it and will get all the information that match with the object from the db.
   public function edit($id){ 
     $ex = Ex1::find($id);
     return view('update',compact('ex')); 
   }
 
   public function update(RequestEx1 $request, $id){
-    /* NO MASS ASSIGNAMENT */
-    /*$ex->name = $request->name;
-    $ex->bio = $request->bio;
-    $ex->birthday = $request->birthday;
-    $ex->save(); */
     $ex = Ex1::find($id);
-
     $ex->update(array_merge($request->all(),['slug' => Str::slug($request->name,'-')]));
     return redirect()->route('exIndex');
   }
 
+  //It's possible to receive an object of the model even if u just send the id, laravel will interprete it and will get all the information that match with the object from the db.
   public function show(Ex1 $ex){ return view('getById',['ex' => $ex]); }
 
   public function destroy($id){
