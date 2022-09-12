@@ -10,6 +10,7 @@
 .jcEvenly{ justify-content: space-evenly; }
 .jcAround{ justify-content: space-around; }
 .jcBetween{ justify-content: space-between; }
+.jiCenter{ justify-items: center;}
 .aiCenter{ align-items: center; }
 .aiStart{ align-items: start; }
 .aiStretch{ align-items: stretch; }

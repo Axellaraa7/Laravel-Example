@@ -12,6 +12,9 @@ d.addEventListener("DOMContentLoaded",async ()=>{
         })
       });
     break;
+    case "/components":
+      d.querySelectorAll(".card>figure>img").forEach((img)=> img.src="https://via.placeholder.com/130x129/986123/ddd?text=user+img");
+      break;
     default:
       console.log(location.pathname);
     break;

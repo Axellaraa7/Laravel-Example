@@ -5,7 +5,7 @@
       <input type="text" name="name" id="name" class="inputText" value="{{ isset($ex) ? old('name',$ex->name) : old('name')}}">
     </div>
     @error('name')
-        <div class="alert alertDanger">* {{$message}}</div>
+        <x-alert type="danger">* {{ $message }}</x-alert>
     @enderror
   </div>
   <div class="dFlex flexColumn gap0h flexAuto">
@@ -14,7 +14,7 @@
       <input type="date" name="birthday" id="birthday" class="inputDate" value="{{ isset($ex) ? old('birthdat',$ex->birthday) : old('birthday')}}">  
     </div>
     @error('birthday')
-        <div class="alert alertDanger">* {{$message}}</div>
+        <x-alert type="danger">* {{ $message }}</x-alert>
     @enderror
   </div>
 </div>
@@ -25,7 +25,7 @@
       <textarea name="bio" id="bio" class="inputArea">{{ isset($ex) ? old('bio',$ex->bio) : old('bio')}}</textarea>
     </div>
     @error('bio')
-        <div class="alert alertDanger">* {{$message}}</div>
+        <x-alert type="danger">* {{ $message }}</x-alert>
     @enderror
   </div>
   <div class="dFlex flexColumn gap0h aiCenter jcCenter flexAuto">

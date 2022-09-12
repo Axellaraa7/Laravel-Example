@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class Ex1Controller extends Controller
 {
   public function index(){
-    $ex = Ex1::orderBy('id','desc')->get();
+    $ex = Ex1::select('id','name','birthday','bio','slug')->orderBy('id','desc')->get();
     return view('welcome',compact('ex'));
   }
   

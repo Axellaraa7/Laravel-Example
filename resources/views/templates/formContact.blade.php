@@ -5,7 +5,7 @@
       <input type="text" name="name" id="name" class="inputTextColumn" value="{{old('name')}}">
     </div>
     @error('name')
-        <div class="alert alertDanger">* {{$message}}</div>
+        <x-alert type="danger">* {{ $message }}</x-alert>
     @enderror
   </div>
   <div class="dFlex flexColumnWrap gap0h flexAuto">
@@ -14,7 +14,7 @@
       <input type="email" name="email" id="email" class="inputTextColumn" value="{{old('email')}}">  
     </div>
     @error('email')
-        <div class="alert alertDanger">* {{$message}}</div>
+        <x-alert type="danger">* {{ $message }}</x-alert>
     @enderror
   </div>
 </section>
@@ -25,7 +25,7 @@
       <textarea name="message" id="message" column="20" class="inputAreaColumn">{{old('message')}}</textarea>
     </div>
     @error('message')
-        <div class="alert alertDanger">* {{$message}}</div>
+        <x-alert type="danger">* {{ $message }}</x-alert>
     @enderror
   </div>
 </section>
@@ -36,7 +36,7 @@
       <label for="terms" class="label">Accept the terms and conditions</label>
     </div>
     @error('terms')
-      <div class="alert alertDanger">* {{$message}}</div>
+      <x-alert type="danger">* {{ $message }}</x-alert>
     @enderror
   </div>
   <div>

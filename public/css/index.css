@@ -19,13 +19,15 @@ h1{
 
 /* -- WELCOME --*/
 .card{
+  width: 100%;
   height: 132px;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px 1px var(--white);
+  box-shadow: 0px 0px 5px 2px var(--white);
   font-size: 12px;
 }
 .userImg{
-  flex: 1 1 132px;
+  width: 130px;
+  height: 100%;
   border-radius: inherit;
 }
 .userImg>img{
@@ -51,7 +53,7 @@ h1{
   }
   .userImg{
     width: 100%;
-    flex: 0 1 100px;
+    height: 200px;
   }
   .infoUser,.bioUser{
     width: 100%;
@@ -63,6 +65,11 @@ h1{
   }
 }
 
+@media screen and (max-width: 500px){
+  .card{
+    width: 300px;
+  }
+}
 /* GRID
 .cardContainer{
   max-width: 1140px;
