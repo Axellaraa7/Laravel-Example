@@ -1,22 +1,46 @@
 .dFlex{ display: flex; }
+.dGrid{ display: grid; }
+
 .flexColumnWrap{ flex-flow: column wrap; }
 .flexColumn{ flex-flow: column nowrap; }
 .flexRowWrap{ flex-flow: row wrap; }
 .flexRow{ flex-flow: row nowrap; }
-.dGrid{ display: grid; }
+
 .gridCol2x1fr{ grid-template-columns: 1fr 1fr; }
+
+.jcStart{ justify-content: flex-start; justify-content: start; }
+.jcEnd{ justify-content: flex-end; justify-content: end; }
 .jcCenter{ justify-content: center; }
-.jcStart{ justify-content: start; }
-.jcEvenly{ justify-content: space-evenly; }
+.jcStretch{ justify-content: stretch; }
 .jcAround{ justify-content: space-around; }
 .jcBetween{ justify-content: space-between; }
-.jiCenter{ justify-items: center;}
-.aiCenter{ align-items: center; }
-.aiStart{ align-items: start; }
-.aiStretch{ align-items: stretch; }
+.jcEvenly{ justify-content: space-evenly; }
+
+.jiStart{ justify-items: start; }
+.jiEnd{ justify-items: end; }
+.jiCenter{ justify-items: center; }
+.jiStretch{ justify-items: stretch; }
+
+.aiStart{ align-content: flex-start; align-content: start; }
+.aiEnd{ align-content: flex-end; align-content: end; }
+.aiCenter{ align-content: center; }
+.aiStretch{ align-content: stretch; }
+.aiAround{ align-content: space-around; }
+.aiBetween{ align-content: space-between; }
+.aiEvenly{ align-content: space-evenly; }
+
+.jiStart{ align-items: start; }
+.jiEnd{ align-items: end; }
+.jiCenter{ align-items: center; }
+.jiStretch{ align-items: stretch; }
+
+.pcCenter{ place-content: center; } 
+.piCenter{ place-items: center; }
+
 .gap0h{ gap: .5rem; }
 .gap1{ gap: 1rem; }
 .gap1h{ gap: 1.5rem; }
 .gap2{ gap: 2rem; }
+
 .flexAuto{ flex: 1 1 auto; }
 .flex100{ flex: 1 1 100%; }

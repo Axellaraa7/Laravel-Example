@@ -21,11 +21,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
         \App\Models\Ex1::factory(20)->create();
+        \App\Models\Phone::factory(20)->create();
         Tag::factory(5)->create();
         \App\Models\Post::factory(10)->
           hasAttached(Tag::factory()->count(1),fn() => ['tag_id' => rand(Tag::min('id'),Tag::max('id'))])->create();
         \App\Models\Video::factory(10)->hasTags(1)->create();
+        \App\Models\Candy::factory(10)->create();
+        \App\Models\Classes::factory(10)->create();
+
     }
 }
